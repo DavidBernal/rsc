@@ -42,7 +42,7 @@ module.exports = function () {
     var task = params.shift();
 
     if (task === 'list') {
-        for (key in tasks) {
+        for (var key in tasks) {
             console.log(' - ' + key + (tasks[key].hasOwnProperty('description') ? ': ' + tasks[key].description : ''));
         }
         process.exit(0);
