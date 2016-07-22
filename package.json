@@ -1,0 +1,25 @@
+{
+  "name": "rsc",
+  "version": "0.1.0",
+  "description": "Run scripts in cmd from node",
+  "main": "index.js",
+  "bin": {
+    "rsc": "bin/rsc.js"
+  },
+  "keywords": [
+    "cmd",
+    "run",
+    "script"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DavidBernal/rsc.git"
+  },
+  "dependencies": {
+    "babel-cli": "^6.0.0",
+    "babel-preset-es2015": "^6.0.0",
+    "colors": "^1.1.2"
+  },
+  "author": "David Bernal",
+  "license": "MIT"
+}
