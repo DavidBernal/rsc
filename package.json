@@ -1,6 +1,6 @@
 {
   "name": "rsc",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Run scripts in cmd from node",
   "main": "index.js",
   "bin": {
