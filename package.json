@@ -1,14 +1,18 @@
 {
   "name": "rsc",
-  "version": "0.1.3",
-  "description": "Run scripts in cmd from node",
-  "main": "index.js",
+  "version": "1.0.0",
+  "description": "Run dynamic scripts with node",
+  "author": "David Bernal",
+  "license": "MIT",
+  "main": "src/lib.js",
   "bin": {
-    "rsc": "bin/index.js"
+    "rsc": "src/bin.js"
   },
   "keywords": [
     "cmd",
     "run",
+    "shell",
+    "bash",
     "script"
   ],
   "repository": {
@@ -18,6 +22,12 @@
   "dependencies": {
     "colors": "^1.1.2"
   },
-  "author": "David Bernal",
-  "license": "MIT"
+  "devDependencies": {
+    "eslint": "^5.1.0",
+    "eslint-config-node-style-guide": "^3.0.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-prettier": "^2.6.2",
+    "prettier": "^1.13.7"
+  }
 }
