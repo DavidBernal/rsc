@@ -1,6 +1,7 @@
 const { spawn } = require('child_process');
 const path = require('path');
 const colors = require('colors');
+const escape = require('escape-string-regexp');
 
 module.exports = function() {
   const args = process.argv;
@@ -75,39 +76,23 @@ function run(task, cmd) {
   });
 }
 
+function replaceWith(message, regex, color = 'blue') {
+  const matches = message.match(regex);
+  if (matches)
+    for (const match of matches) {
+      const chain = match.substr(1, match.length - 2);
+      message = message.replace(new RegExp(escape(chain), 'g'), colors[color](chain));
+    }
+
+  return message;
+}
+
 function paint(message) {
-  let matches = message.match(/"([^"]+)"/gim);
-  if (matches)
-    for (const match of matches)
-      message = message.replace(new RegExp(match.toString(), 'g'), colors.yellow(match));
-
-  matches = message.match(/'([^']+)'/gim);
-  if (matches)
-    for (const match of matches) {
-      let chain = match.substr(1, match.length - 2);
-      message = message.replace(new RegExp(chain.toString(), 'g'), colors.green(chain));
-    }
-
-  matches = message.match(/\(([^{]+)\)/gim);
-  if (matches)
-    for (const match of matches) {
-      let chain = match.substr(1, match.length - 2);
-      message = message.replace(new RegExp(chain.toString(), 'g'), colors.blue(chain));
-    }
-
-  matches = message.match(/\{([^{]+)\}/gim);
-  if (matches)
-    for (const match of matches) {
-      let chain = match.substr(1, match.length - 2);
-      message = message.replace(new RegExp(chain.toString(), 'g'), colors.red(chain));
-    }
-
-  matches = message.match(/\[([^[]+)\]/gim);
-  if (matches)
-    for (const match of matches) {
-      let chain = match.substr(1, match.length - 2);
-      message = message.replace(new RegExp(chain, 'g'), colors.yellow(chain));
-    }
+  message = replaceWith(message, /"([^"]+)"/gim, 'yellow');
+  message = replaceWith(message, /'([^']+)'/gim, 'green');
+  message = replaceWith(message, /\(([^(]+)\)/gim, 'blue');
+  message = replaceWith(message, /\{([^{]+)\}/gim, 'red');
+  message = replaceWith(message, /\[([^[]+)\]/gim, 'yellow');
 
   return message;
 }

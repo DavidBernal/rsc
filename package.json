@@ -1,6 +1,6 @@
 {
   "name": "rsc",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Run dynamic scripts with node",
   "author": "David Bernal",
   "license": "MIT",
@@ -20,7 +20,8 @@
     "url": "https://github.com/DavidBernal/rsc.git"
   },
   "dependencies": {
-    "colors": "^1.1.2"
+    "colors": "^1.1.2",
+    "escape-string-regexp": "^1.0.5"
   },
   "devDependencies": {
     "eslint": "^5.1.0",
