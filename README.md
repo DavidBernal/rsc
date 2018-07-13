@@ -17,7 +17,7 @@ It needs to be installed globally: `npm install rsc -g`
 Create `rsc.config.js` file in your directory. Example:
 
 ```
-{
+module.exports = {
     "demo": "echo 'hello world'",
     "hello": function(name){
         return "echo hello " + name;
@@ -61,7 +61,7 @@ rsc server
 
 `list` is a reserved word that display list of scripts in rs.config and package.json
 
-`rs list`:
+`rsc list`:
 
 ```
 - demo
