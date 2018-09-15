@@ -12,5 +12,6 @@ module.exports = {
     } else {
       return "git add --all &&  git commit -m '" + message + "' && git push";
     }
-  }
+  },
+  async: (...params) => Promise.resolve().then(() => console.log('resolved', params))
 };

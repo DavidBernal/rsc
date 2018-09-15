@@ -1,12 +1,12 @@
 {
   "name": "rsc",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Run dynamic scripts with node",
   "author": "David Bernal",
   "license": "MIT",
-  "main": "src/lib.js",
+  "main": "lib/index.js",
   "bin": {
-    "rsc": "src/bin.js"
+    "rsc": "bin/rsc"
   },
   "keywords": [
     "cmd",

@@ -1,0 +1,5 @@
+#!/usr/bin/env node
+
+const rsc = require('../lib');
+
+rsc(...process.argv.slice(2));
