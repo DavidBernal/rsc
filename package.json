@@ -1,6 +1,6 @@
 {
   "name": "rsc",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Run dynamic scripts with node",
   "author": "David Bernal",
   "license": "MIT",
